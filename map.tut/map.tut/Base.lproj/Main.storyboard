@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cuL-D6-yNC">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="map_tut" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="V1l-XC-kRO">
+                                <rect key="frame" x="0.0" y="110" width="600" height="446"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v6q-hg-f4I">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Zoom" id="S5p-5z-FEJ">
+                                        <connections>
+                                            <action selector="zoomIn:" destination="BYZ-38-t0r" id="2l4-jb-Y3c"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Type" id="uO5-hA-Pkt">
+                                        <connections>
+                                            <action selector="changeType:" destination="BYZ-38-t0r" id="nZV-Ax-IOw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cht-ya-coH">
+                                <rect key="frame" x="16" y="72" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <action selector="textFeildReturn:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="fpw-up-aBq"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v6q-hg-f4I" firstAttribute="top" secondItem="V1l-XC-kRO" secondAttribute="bottom" id="2xx-0i-Z4x"/>
+                            <constraint firstAttribute="trailing" secondItem="cht-ya-coH" secondAttribute="trailing" constant="16" id="7hr-O1-V4o"/>
+                            <constraint firstAttribute="trailing" secondItem="v6q-hg-f4I" secondAttribute="trailing" id="8qL-4r-TTe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="v6q-hg-f4I" secondAttribute="bottom" id="AL9-Br-3Y7"/>
+                            <constraint firstItem="cht-ya-coH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="CoH-ng-fle"/>
+                            <constraint firstItem="V1l-XC-kRO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dkc-XQ-BCH"/>
+                            <constraint firstItem="V1l-XC-kRO" firstAttribute="top" secondItem="cht-ya-coH" secondAttribute="bottom" constant="8" id="eYj-1D-pgD"/>
+                            <constraint firstAttribute="trailing" secondItem="V1l-XC-kRO" secondAttribute="trailing" id="khQ-8I-Vkz"/>
+                            <constraint firstItem="V1l-XC-kRO" firstAttribute="top" secondItem="cht-ya-coH" secondAttribute="bottom" id="lfK-lC-63J"/>
+                            <constraint firstItem="cht-ya-coH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ltX-Bi-ixV"/>
+                            <constraint firstItem="v6q-hg-f4I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mCh-IX-KwO"/>
+                            <constraint firstItem="v6q-hg-f4I" firstAttribute="top" secondItem="V1l-XC-kRO" secondAttribute="bottom" id="yzG-FO-6js"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="lfK-lC-63J"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ynm-vU-PlX"/>
+                    <connections>
+                        <outlet property="mapView" destination="V1l-XC-kRO" id="9Ig-VI-lvY"/>
+                        <outlet property="searchText" destination="cht-ya-coH" id="pDs-Oa-ZQy"/>
+                        <outlet property="zoomButton" destination="S5p-5z-FEJ" id="s51-Zx-GPn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226" y="488"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zc6-bO-LUE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cuL-D6-yNC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TNU-EX-qps">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rDd-L7-mxy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nnV-ME-dwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-729" y="480"/>
+        </scene>
+    </scenes>
+</document>
